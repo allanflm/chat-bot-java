@@ -15,7 +15,7 @@ public class ChatBotService {
     public ChatBotService(OpenAIClient client) {
         this.client = client;
     }
-    public Flowable<ChatCompletionChunk> responderPergunta(String pergunta){
+    public String responderPergunta(String pergunta){
         var promptSistem = "Você é um chatbot de atendimento a clientes de um ecommerce e deve responder apenas perguntas relacionadas com o ecommerce";
         var dados = new DadosRequisicaoChatCompletion(promptSistem, pergunta);
         return client.enviarRequisicaoChatCompletion(dados);
